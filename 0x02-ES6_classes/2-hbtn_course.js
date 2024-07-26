@@ -26,7 +26,7 @@ class HolbertonCourse {
 
   // Validate students
   _validateStudents(students) {
-    if (!Array.isArray(students) || !students.every(student => typeof student === 'string')) {
+    if (!Array.isArray(students) || !students.every((student) => typeof student === 'string')) {
       throw new TypeError('Students must be an array of strings');
     }
     return students;

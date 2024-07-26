@@ -7,6 +7,7 @@ function handleProfileSignup(firstName, lastName, fileName) {
   const signUpPromise = signUpUser(firstName, lastName);
   const uploadPromise = uploadPhoto(fileName);
 
+  // Use Promise.allSettled to handle both promises
   return Promise.allSettled([signUpPromise, uploadPromise])
     .then((results) => results.map((result) => ({
       status: result.status,
